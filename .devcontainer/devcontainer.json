@@ -1,0 +1,38 @@
+{
+    "name": "OpenCog DevContainer",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": {
+            "VARIANT": "22.04"
+        }
+    },
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "go.gopath": "/home/codespace/go",
+        "go.useLanguageServer": true,
+        "editor.formatOnSave": true,
+        "C_Cpp.intelliSenseEngine": "Default",
+        "C_Cpp.default.configurationProvider": "ms-vscode.cpptools"
+    },
+    "extensions": [
+        "ms-vscode.cpptools",
+        "golang.Go",
+        "hashicorp.terraform",
+        "ms-python.python",
+        "esbenp.prettier-vscode",
+        "eamodio.gitlens",
+        "dbaeumer.vscode-eslint"
+    ],
+    "forwardPorts": [],
+    "postCreateCommand": "go mod tidy && pip3 install --upgrade pip && pip3 install -r requirements.txt",
+    "remoteUser": "root",
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+    ],
+    "remoteEnv": {
+        "GO111MODULE": "on",
+        "GOPROXY": "https://proxy.golang.org",
+        "GOSUMDB": "sum.golang.org"
+    }
+}
