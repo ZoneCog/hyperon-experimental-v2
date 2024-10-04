@@ -1,0 +1,17 @@
+[package]
+edition = "2021"
+name = "dyn-fmt"
+version = "0.4.0"
+rust-version = "1.71"
+authors = ["warlock <internalmike@gmail.com>"]
+description = "Provides dynamic string format."
+readme = "README.md"
+documentation = "https://docs.rs/dyn-fmt/"
+keywords = ["string", "dynamic", "format", "str", "arguments"]
+categories = ["no-std", "value-formatting"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/A1-Triard/dyn-fmt"
+
+[features]
+default = ["std"]
+std = []

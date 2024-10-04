@@ -1,0 +1,8 @@
+modules = ["rust-stable", "python-3.12", "cpp-clang14", "c-clang14", "docker"]
+run = "cargo run"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "cargo run"]
